@@ -10,7 +10,7 @@ button.addEventListener('click', () => {
         document.getElementById('height_error').innerHTML = 'please provide a valid height';
     }else{
         document.getElementById('height_error').innerHTML = ''; 
-        weight_status=true;
+        height_status=true;
     }
 
     if(weight === '' || isNaN(weight) || (weight <= 0)){
@@ -24,11 +24,16 @@ button.addEventListener('click', () => {
         const bmi = (weight / ((height*height)/10000)).toFixed(2);
 
         if(bmi < 18.6){
-            result.innerHTML
-        }else if{(bmi >= 18.6 && bmi < 24.9){
+            result.innerHTML = 'under weight: ' + bmi;
+        }else if(bmi >= 18.6 && bmi < 24.9){
             result.innerHTML = 'Normal : ' + bmi;
-        }else if
+        }else{ 
+            result.innerHTML = 'over weight : ' + bmi;
+        }
 
+    }else{
+        alert('The form has errors') ;
+        result.innerHTML = '' ;
     }
 
 });
